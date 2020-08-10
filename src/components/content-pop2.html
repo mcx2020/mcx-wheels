@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>弹窗练习</title>
+	<meta charset="utf-8">
+	<style>
+		.btn-pop {
+			background-color: #ffd475;
+			border-radius: 10px;
+			border: 0px;
+			zoom: 200%;
+
+		}
+
+		#background-pop {
+			display: none;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		#div-pop {
+			background: #ffffff;
+			border: 10px solid green;
+			width: 40%;
+			z-index: 1;
+			margin: 12% auto;
+			overflow: auto;
+		}
+
+		.div-top {
+			width: 100%;
+			height: auto;
+			background-color: #28a3e7;
+			color: #ffffff;
+		}
+
+		.div-top div {
+			padding: 3px 5px 5px 8px;
+		}
+
+		span {
+			color: white;
+			margin-bottom: 10px;
+			margin-left: 20px;
+			cursor: pointer;
+			float: right;
+		}
+
+		.div-content {
+			width: auto;
+			height: 200px;
+			overflow: auto;
+		}
+
+		.div-footer {
+			text-align: center;
+			background-color: darkgray;
+		}
+	</style>
+</head>
+
+<body>
+	<button class="btn-pop" onclick="show()">弹出一个窗口</button>
+	<div id="background-pop">
+		<div id="div-pop">
+			<div class="div-top">
+				<span id="close-button">×</span>
+				<div>弹窗顶部(可以写个标题)</div>
+			</div>
+			<div class="div-content">
+				放点内容进来<br>
+				点击灰色位置和右上角x关闭弹窗
+			</div>
+			<div class="div-footer">
+				底部内容
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var div = document.getElementById('background-pop');
+	var close = document.getElementById('close-button');
+	function show() {
+		div.style.display = "block";
+	}
+	close.onclick = function close() {
+		div.style.display = "none";
+	}
+	window.onclick = function close(e) {
+		if (e.target == div) {
+			div.style.display = "none";
+		}
+	}
+</script>
+
+</html>

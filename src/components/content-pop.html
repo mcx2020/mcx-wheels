@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Button</title>
+	<title>Content-Pop</title>
 	<style>
 		* {
 			margin: 0;
@@ -12,34 +12,19 @@
 			box-sizing: border-box;
 		}
 
-		body {
-			font-size: 16px;
-		}
-
 		button {
 			outline: none;
 			border: none;
 		}
-	</style>
-	<style>
+
 		.button-wrapper {
 			position: relative;
 			display: inline-block;
 			margin: 10px;
 		}
 
-		.button-wrapper .button-suspension {
-			display: none;
-			min-width: 20px;
-			position: absolute;
-			top: 100%;
-			left: 50%;
-			transform: translateX(-50%);
-
-		}
-
-		.button-wrapper:hover .button-suspension {
-			display: inline-block;
+		.button-wrapper:hover {
+			cursor: pointer;
 		}
 
 		.mcx-button {
@@ -53,15 +38,42 @@
 			font-size: 1.5rem;
 			line-height: 1.5em;
 		}
+
+
+		.content-pop {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-align: center;
+			border: 1px solid red;
+			width: 100vw;
+			height: 100vh;
+		}
+
+		.content-pop .content {
+			margin-top: 20%;
+			border: 1px solid green;
+		}
 	</style>
 </head>
 
 <body>
-	<h1>Button</h1>
+	<h1>全局弹窗</h1>
 	<div class='button-wrapper'>
 		<button class='mcx-button'>One Button</button>
-		<div class='button-suspension'>我是悬浮框</div>
 	</div>
+	<div class='content-pop'>
+		<div class='content'>我是全局弹窗</div>
+	</div>
+	<script>
+		let button = document.querySelector('.button-wrapper')
+		let contentPop = document.querySelector('.content-pop')
+		contentPop.addEventListener('click', () => {
+			contentPop.style.display = 'block'
+		})
+
+	</script>
 </body>
 
 </html>
