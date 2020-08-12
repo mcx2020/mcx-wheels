@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>背景与边框</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background: #ccc;
+		}
+
+		header {
+			padding: 20px;
+		}
+
+		h1,
+		h2 {
+			text-align: center;
+		}
+
+		h2 {
+			padding-top: 20px;
+		}
+
+		section {
+			border: 1px solid #eee;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		section .explanation {
+			position: absolute;
+			top: 50%;
+			right: 10%;
+		}
+
+		section .tip {
+			position: absolute;
+			top: 50%;
+			left: 10%;
+		}
+
+		.clearfix::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		.common {
+			display: inline-block;
+			margin: 30px;
+			padding: 20px;
+			line-height: 80px;
+		}
+
+		.exercise1 {
+			border: 10px dashed red;
+			background: yellow;
+			background-clip: padding-box;
+		}
+
+		.exercise2-1 {
+			background: yellowgreen;
+			box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink, 0 2px 5px 15px rgba(0, 0, 0, 0.6);
+		}
+
+		.exercise2-2 {
+			background: yellowgreen;
+			border: 10px solid #655;
+			outline: 5px solid deeppink;
+		}
+
+		.exercise3-1 {
+			font-weight: bold;
+			background: url(../img/add.png) no-repeat bottom right yellowgreen;
+			background-size: 50px;
+			background-position: right 20px bottom 20px;
+		}
+
+		.exercise3-2 {
+			font-weight: bold;
+			background: url(../img/add.png) bottom right no-repeat yellowgreen;
+			background-size: 50px;
+			background-origin: content-box;
+		}
+
+		.exercise3-3 {
+			font-weight: bold;
+			background: url(../img/add.png) no-repeat right yellowgreen;
+			background-size: 50px;
+			background-position: calc(100% - 20px) calc(100% - 20px);
+		}
+
+		.exercise4-11 {
+			background: #655;
+		}
+
+		.exercise4-12 {
+			background: tan;
+			border-radius: .8em;
+			padding: 1em;
+		}
+
+		.exercise4-2 {
+			background: tan;
+			border-radius: .8em;
+			box-shadow: 0 0 0 10px #655;
+			outline: 20px solid #655;
+		}
+
+		.exercise5-1 {
+			background: linear-gradient(#fb3, #58a);
+		}
+
+		.exercise5-2 {
+			background: linear-gradient(#fb3 20%, #58a 60%);
+		}
+
+		.exercise5-3 {
+			background: linear-gradient(#fb3 50%, #58a 50%);
+			background-size: 100% 50px;
+		}
+
+		.exercise5-4 {
+			background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+			background-size: 100% 52px;
+		}
+
+		.exercise5-5 {
+			background: linear-gradient(to right, #fb3 50%, #58a 0);
+			background-size: 50px 100%;
+		}
+
+		.exercise5-6 {
+			background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>背景与边框</h1>
+	</header>
+	<main>
+		<section>
+			<h2>1. 半透明边框</h2>
+			<div class='common exercise1'>半透明边框</div>
+			<div class='explanation'>
+				background、border、background-clip
+			</div>
+		</section>
+		<section>
+			<h2>2. 多重边框</h2>
+			<div class='common exercise2-1'>box-shadow 模拟外边框</div>
+			<div class='common exercise2-2'>outline 模拟外边框</div>
+			<div class='explanation'>
+				<p>background、box-shadow</p>
+				<br>
+				<p>background、border、outline</p>
+			</div>
+		</section>
+		<section>
+			<h2>3. 灵活的背景定位</h2>
+			<div class='common exercise3-1'>背景图片的偏移定位</div>
+			<div class='common exercise3-2'>background-origin 方案</div>
+			<div class='common exercise3-3'>calc() 方案</div>
+			<div class='explanation'>
+				<p>background、background-position</p>
+				<br>
+				<p>background、background-position、background-origin</p>
+				<br>
+				<p>background、background-position</p>
+			</div>
+		</section>
+		<section>
+			<h2>4. 边框内圆角</h2>
+			<div class='common exercise4-11'>
+				<div class='exercise4-12'>
+					实现内圆、外直的边框（两个 div 嵌套方式）
+				</div>
+			</div>
+			<div class='common exercise4-2'>box-shadow + outline 方案</div>
+			<div class="explanation">
+				<p>background、border-radius</p>
+				<br>
+				<p>background、border-radius、box-shadow、outline</p>
+			</div>
+		</section>
+		<section>
+			<h2>5. 条纹背景</h2>
+			<div class='common exercise5-1'>background 的 linear-gradient 实现 CSS 条纹</div>
+			<div class='common exercise5-2'>色标位置可调节</div>
+			<div class='common exercise5-3'>色标一致，渐变为零</div>
+			<div class='common exercise5-4'>三种颜色的条纹</div>
+			<div class="common exercise5-5">竖直条纹</div>
+			<div class="common exercise5-6">斜向条纹</div>
+			<div class='explanation'>
+				<p>background</p>
+				<br>
+				<p>background</p>
+				<br>
+				<p>background、background-size</p>
+				<br>
+				<p>background、background-size</p>
+				<br>
+				<p>background、background-size</p>
+				<br>
+				<p>background</p>
+			</div>
+			<div class="tip">
+				<p>渐变其实是代码生成的图片</p>
+				<br>
+				<p>后一个色标值比前一个色标值小时，它默认变成前面色标值中的最大值</p>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>

@@ -12,13 +12,35 @@
 			box-sizing: border-box;
 		}
 
+		body {
+			background: #ddd;
+		}
+
 		h1 {
-			margin-bottom: 10px;
+			text-align: center;
+			margin: 20px;
 		}
 
 		ul {
+			margin: 20px;
+			padding: 20px;
+			border: 10px solid #eeeeee;
 			list-style: none;
-			padding-left: 50px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		ul>li {
+			line-height: 1.5em;
+			padding: 0.5em;
+			box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+		}
+
+		a {
+			text-decoration: none;
+			color: #333;
 		}
 	</style>
 </head>
@@ -30,6 +52,7 @@
 		<li><a href="./components/content-pop.html">Content Pop（testing）</a></li>
 		<li><a href="./components/content-pop2.html">Content Pop2（example）</a></li>
 		<li><a href="./components/outline.html">Content Pop2（test）</a></li>
+		<li><a href="./components/background-and-border.html">背景与边框</a></li>
 	</ul>
 </body>
 
