@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>形状</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background: #ccc;
+		}
+
+		header {
+			padding: 20px;
+		}
+
+		h1,
+		h2 {
+			text-align: center;
+		}
+
+		h2 {
+			padding-top: 20px;
+		}
+
+		section {
+			border: 1px solid #eee;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.common {
+			display: inline-block;
+			margin: 30px;
+			padding: 20px;
+			line-height: 80px;
+		}
+
+		.exercise1-1 {
+			background: tan;
+			border-radius: 50% / 50%;
+		}
+
+		.exercise1-2 {
+			background: tan;
+			border-radius: 50% / 100% 100% 0 0;
+		}
+
+		.exercise1-3 {
+			background: tan;
+			border-radius: 100% 0 0 100% / 50%;
+		}
+
+		.exercise1-4 {
+			background: tan;
+			border-radius: 100% 0 0 0 / 100% 0 0 0;
+		}
+
+		.exercise2-11 {
+			background: tan;
+			transform: skewX(-45deg);
+		}
+
+		.exercise2-12 {
+			transform: skewX(45deg);
+		}
+
+		.exercise2-2 {
+
+			position: relative;
+		}
+
+		.exercise2-2:after {
+			position: absolute;
+			content: '';
+			background: tan;
+			transform: skewX(-45deg);
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: -1;
+		}
+
+		.exercise3-11 {
+			margin: 50px;
+			transform: rotate(45deg);
+			overflow: hidden;
+		}
+
+		.exercise3-11 .exercise3-12 {
+			vertical-align: middle;
+			transform: rotate(-45deg) scale(1.42);
+		}
+
+		.exercise3-2 {
+			clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+		}
+
+		.exercise3-3 {
+			clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+			transition: 1s clip-path;
+		}
+
+		.exercise3-3:hover {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>形状</h1>
+	</header>
+	<main>
+		<section>
+			<h2>1. 自适应椭圆</h2>
+			<div class='common exercise1-1'>
+				画一个椭圆，设置水平半径和垂直半径
+			</div>
+			<div class='common exercise1-2'>
+				半椭圆练习，灵活运用 border-radius
+			</div>
+			<div class='common exercise1-3'>
+				半椭圆练习，灵活运用 border-radius
+			</div>
+			<div class='common exercise1-4'>
+				1/4椭圆练习，灵活运用 border-radius
+			</div>
+		</section>
+		<section>
+			<h2>平行四边形</h2>
+			<div class='common exercise2-11'>
+				<div class='exercise2-12'>
+					45° 平行四边形，元素嵌套方案
+				</div>
+			</div>
+			<div class='common exercise2-2'>
+				45° 平行四边形，伪元素方案
+			</div>
+		</section>
+		<section>
+			<h2>菱形图片</h2>
+			<div class='exercise3-11'>
+				<img class='exercise3-12' src="../img/dog.jpg" alt="dog" style='width:180px'>
+			</div>
+			<p style='margin:10px;'>使用一个 div 包裹 img 方案</p>
+			<img class='exercise3-2' src="../img/dog.jpg" alt="dog" style='width:180px'>
+			<p style='margin:10px'>直接使用一个 img 标签方案</p>
+			<img class='exercise3-3' src="../img/dog.jpg" alt="dog" style='width:180px'>
+			<p>使用 clip-path 配合 transition 平滑过渡为完整图片</p>
+		</section>
+	</main>
+</body>
+
+</html>
