@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>图片显示的五种方法</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background: #ccc;
+		}
+
+		header {
+			padding: 20px;
+		}
+
+		h1,
+		h2 {
+			text-align: center;
+		}
+
+		h2 {
+			padding-top: 20px;
+		}
+
+		section {
+			border: 1px solid #eee;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.common {
+			display: inline-block;
+			width: 128px;
+			height: 128px;
+		}
+
+		.exercise2-home {
+			background: url("../img/home.png");
+		}
+
+		.exercise2-like {
+			background: url("../img/like.png");
+
+		}
+
+		.exercise2-mine {
+			background: url("../img/mine.png");
+		}
+
+		.exercise3-mine,
+		.exercise3-like,
+		.exercise3-home {
+			display: inline-block;
+			vertical-align: middle;
+			background: url(../img/custom.png) -9999px -9999px no-repeat;
+		}
+
+		.exercise3-mine {
+			width: 128px;
+			height: 128px;
+			background-position: 0 0;
+		}
+
+		.exercise3-like {
+			width: 128px;
+			height: 128px;
+			background-position: -138px 0;
+		}
+
+		.exercise3-home {
+			width: 128px;
+			height: 128px;
+			background-position: -276px 0;
+		}
+
+
+		@font-face {
+			font-family: 'iconfont';
+			/* project id 2026359 */
+			src: url('//at.alicdn.com/t/font_2026359_unengwqe56i.eot');
+			src: url('//at.alicdn.com/t/font_2026359_unengwqe56i.eot?#iefix') format('embedded-opentype'),
+				url('//at.alicdn.com/t/font_2026359_unengwqe56i.woff2') format('woff2'),
+				url('//at.alicdn.com/t/font_2026359_unengwqe56i.woff') format('woff'),
+				url('//at.alicdn.com/t/font_2026359_unengwqe56i.ttf') format('truetype'),
+				url('//at.alicdn.com/t/font_2026359_unengwqe56i.svg#iconfont') format('svg');
+		}
+
+		.exercise4-1 {
+			font-family: 'iconfont';
+			font-size: 128px;
+		}
+
+		.exercise4-2 .iconfont {
+			font-size: 128px;
+		}
+
+		.icon {
+			width: 1em;
+			height: 1em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+
+		.exercise5 .icon {
+			width: 128px;
+			height: 128px;
+		}
+
+		.exercise6-home,
+		.exercise6-like,
+		.exercise6-mine {
+
+			display: inline-block;
+			width: 128px;
+			height: 128px;
+		}
+
+		.exercise6-home {
+			position: relative;
+			vertical-align: top;
+		}
+
+		.exercise6-home .pen1 {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 11px;
+			width: 91px;
+			height: 64px;
+			border: 8px solid #444;
+			border-top: 5px solid transparent;
+			border-radius: 4px;
+		}
+
+		.exercise6-home .pen2 {
+			position: absolute;
+			border-bottom: 8px solid #444;
+			transform: rotate(45deg);
+			width: 64px;
+			top: 32px;
+			left: 53px;
+			border-radius: 4px;
+		}
+
+		.exercise6-home .pen3 {
+			position: absolute;
+			border-bottom: 8px solid #444;
+			transform: rotate(-45deg);
+			width: 64px;
+			top: 32px;
+			right: 53px;
+			border-radius: 4px;
+		}
+
+		.exercise6-home .pen4 {
+			position: absolute;
+			border-right: 11px solid #00D8A0;
+			border-radius: 0 4px 0 0 / 0 4px 0 0;
+			height: 33px;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 68px;
+		}
+	</style>
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_2026359_unengwqe56i.css">
+	<script src="//at.alicdn.com/t/font_2026359_unengwqe56i.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>图片显示的六种方法</h1>
+	</header>
+	<main>
+		<section>
+			<h2>1. 使用 img 标签 </h2>
+			<div>
+				<img src="../img/home.png" alt="">
+				<img src="../img/like.png" alt="">
+				<img src="../img/mine.png" alt="">
+			</div>
+		</section>
+		<section>
+			<h2>2. 使用标签的 background-img 属性 </h2>
+			<div>
+				<div class='common exercise2-home'></div>
+				<div class='common exercise2-like'></div>
+				<div class='common exercise2-mine'></div>
+			</div>
+		</section>
+		<section>
+			<h2>3. 使用 CSS 雪碧图</h2>
+			<div>
+				<div class="exercise3-home"></div>
+				<div class="exercise3-like"></div>
+				<div class="exercise3-mine"></div>
+			</div>
+		</section>
+		<section>
+			<h2>4. 使用 font</h2>
+			<div class='exercise4-1'>
+				&#xe73d;&#xe742;&#xe743;
+			</div>
+			<p>HTML 形式</p>
+			<div class='exercise4-2'>
+				<div class='iconfont icon-shouye common'></div>
+				<div class='iconfont icon-xihuan common'></div>
+				<div class='iconfont icon-wode common'></div>
+			</div>
+			<p style='padding-bottom:20px;'>CSS 伪元素形式</p>
+		</section>
+		<section>
+			<h2>5. 使用 svg symbol</h2>
+			<div class='exercise5'>
+				<svg class='icon' aria-hidden="true">
+					<use xlink:href="#icon-shouye"></use>
+				</svg>
+				<svg class='icon' aria-hidden="true">
+					<use xlink:href="#icon-xihuan"></use>
+				</svg>
+				<svg class='icon' aria-hidden="true">
+					<use xlink:href="#icon-wode"></use>
+				</svg>
+			</div>
+		</section>
+		<section>
+			<h2>6. 用 CSS 直接画</h2>
+			<div class="exercise6">
+				<div class="exercise6-home">
+					<div class="pen1"></div>
+					<div class="pen2"></div>
+					<div class="pen3"></div>
+					<div class="pen4"></div>
+				</div>
+				<div class="exercise6-like" style='padding-top:65px;'>画这个有点意思</div>
+				<div class="exercise6-mine" style='padding-top:65px;'>需要有耐心</div>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>
