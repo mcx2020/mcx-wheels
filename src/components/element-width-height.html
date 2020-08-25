@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>背景与边框</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background: #ccc;
+		}
+
+		header {
+			padding: 20px;
+		}
+
+		h1,
+		h2 {
+			text-align: center;
+		}
+
+		h2 {
+			padding: 10px 0;
+		}
+
+		section {
+			border: 1px solid #eee;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			padding: 20px 0;
+		}
+
+		.exercise1 {
+			background: tan;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>元素的宽高</h1>
+	</header>
+	<main>
+		<section>
+			<h2>1. 块级元素</h2>
+			<div class='exercise1'>
+				<span>这是一个块元素</span>
+				<span>宽度自适应</span>
+				<span>高度是内部文档流元素的总和</span>
+
+			</div>
+		</section>
+		<section>
+			<h2>2. 内联元素</h2>
+			<div class='common exercise2-1'>box-shadow 模拟外边框</div>
+			<div class='common exercise2-2'>outline 模拟外边框</div>
+		</section>
+		<section>
+			<h2>2. 内联块级元素</h2>
+			<div class='common exercise2-1'>box-shadow 模拟外边框</div>
+			<div class='common exercise2-2'>outline 模拟外边框</div>
+		</section>
+
+	</main>
+</body>
+
+</html>

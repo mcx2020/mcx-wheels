@@ -4,14 +4,20 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>堆叠上下文</title>
+	<title>堆叠顺序</title>
 	<style>
 		body {
 			background: #CCC;
 		}
 
+		header h1 {
+			text-align: center;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #EEE;
+		}
+
 		.father {
-			width: 970px;
+			max-width: 970px;
 			margin: auto;
 			margin-top: 40px;
 			background: yellow;
@@ -44,7 +50,7 @@
 			margin-left: 60px;
 			width: 80%;
 			height: 120px;
-			margin-top: 97px;
+			margin-top: 54px;
 		}
 
 		.position {
@@ -53,7 +59,7 @@
 			margin-left: 20px;
 			width: 40%;
 			background: #F29900;
-			top: 300px;
+			top: 315px;
 		}
 
 		.position2 {
@@ -62,16 +68,19 @@
 			margin-left: 40px;
 			width: 30%;
 			background: #da6ccb;
-			top: 350px;
+			top: 360px;
 			z-index: 1;
 		}
 	</style>
 </head>
 
 <body>
+	<header>
+		<h1>堆叠顺序</h1>
+	</header>
 	<div class="father">
 		<div class='position2'>定位元素 z-index > 0</div>
-		<div class='position'>定位元素</div>
+		<div class='position'>定位元素 z-index: auto</div>
 		<div class='inline-block'>内联元素</div>
 		<div class='float'>浮动元素</div>
 		<div class='block'>block 元素</div>
