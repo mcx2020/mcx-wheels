@@ -17,7 +17,7 @@
 		}
 
 		header {
-			padding: 20px;
+			padding: 20px 0;
 		}
 
 		h1,
@@ -30,18 +30,55 @@
 		}
 
 		section {
-			border: 1px solid #eee;
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			padding: 20px 0;
+			text-align: center;
+			padding: 10px 0;
+		}
+
+		.common {
+			background: tan;
+			text-align: center;
 		}
 
 		.exercise1 {
-			background: tan;
+			padding: 20px 0;
+		}
+
+		.exercise2 {
+			padding: 20px;
+		}
+
+		.exercise3 {
+			display: inline-block;
+			padding: 20px;
+		}
+
+		.exercise4-1 {
+			margin: 10px auto;
+			padding: 10px 0;
+			max-width: 500px;
+		}
+
+		.exercise5-1 {
+			margin: 10px auto;
+			padding: 10px 0;
+			max-width: 500px;
+		}
+
+		.exercise6 {
+			margin: auto;
+			max-width: 500px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.exercise7 {
+			margin: auto;
+			max-width: 500px;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
 		}
 	</style>
 </head>
@@ -53,24 +90,52 @@
 	<main>
 		<section>
 			<h2>1. 块级元素</h2>
-			<div class='exercise1'>
-				<span>这是一个块元素</span>
-				<span>宽度自适应</span>
-				<span>高度是内部文档流元素的总和</span>
-
+			<div class='common exercise1'>
+				<span>宽度自适应，高度由内部文档流元素的总和决定</span>
+				<br>
+				<span>可设置 padding 和 margin</span>
 			</div>
 		</section>
 		<section>
 			<h2>2. 内联元素</h2>
-			<div class='common exercise2-1'>box-shadow 模拟外边框</div>
-			<div class='common exercise2-2'>outline 模拟外边框</div>
+			<span class='common'>
+				<span>宽度和高度由 content 决定</span>
+				<br>
+				<span>设置 padding 和 margin 无效</span>
+			</span>
 		</section>
 		<section>
-			<h2>2. 内联块级元素</h2>
-			<div class='common exercise2-1'>box-shadow 模拟外边框</div>
-			<div class='common exercise2-2'>outline 模拟外边框</div>
+			<h2>3. 内联块级元素</h2>
+			<div class='common exercise3'>
+				<span>宽度和高度由内部文档流的总和决定</span>
+				<br>
+				<span>可设置 padding 和 margin</span>
+				<br>
+				<span>兼备了块级元素和内联元素的特性</span>
+			</div>
 		</section>
-
+		<section>
+			<h2>4. 水平居中</h2>
+			<div class='common exercise4-1'>块级元素：设置它自己 margin:auto</div>
+			<span class='common'>内联元素：设置其父元素 text-align:center</span>
+		</section>
+		<section>
+			<h2>5. 垂直居中</h2>
+			<div class='common exercise5-1'>块级元素：设置其父元素的 padding（或者做 flex 布局）</div>
+			<span class='common'>内联元素：设置其父元素的 padding（或者做 flex 布局）</span>
+		</section>
+		<section>
+			<h2>6. 单行内容溢出省略</h2>
+			<div class='common exercise6'>
+				这是一段很长很长的文本，请看，看到省略号为止，啦啦啦啦啦啦啦啦啦
+			</div>
+		</section>
+		<section>
+			<h2>7. 多行内容溢出省略</h2>
+			<div class='common exercise7'>
+				这是一段很长很长的文本，请看，看到省略号为止，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+			</div>
+		</section>
 	</main>
 </body>
 
