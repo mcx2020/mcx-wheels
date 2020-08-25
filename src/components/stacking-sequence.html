@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>堆叠上下文</title>
+	<style>
+		body {
+			background: #CCC;
+		}
+
+		.father {
+			width: 970px;
+			margin: auto;
+			margin-top: 40px;
+			background: yellow;
+			height: 200px;
+			border: 100px dashed red;
+		}
+
+		.block {
+			display: block;
+			height: 100px;
+			background: tan;
+			margin-top: -50px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		.float {
+			position: float;
+			height: 160px;
+			background: #EEE;
+			margin-top: -50px;
+			margin-left: 40px;
+			margin-right: 40px;
+			margin-bottom: -50px;
+		}
+
+		.inline-block {
+			display: inline-block;
+			background: #60D957;
+			margin-top: -50px;
+			margin-left: 60px;
+			width: 80%;
+			height: 120px;
+			margin-top: -10px;
+		}
+
+		.position {
+			width: 100px;
+			height: 80px;
+			position: absolute;
+			margin-left: 20px;
+			width: 40%;
+			background: #F29900;
+			top: 300px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="father">
+		<div class='block'>block 元素</div>
+		<div class='float'>浮动元素</div>
+		<div class='inline-block'>内联元素</div>
+		<div class='position'>定位元素</div>
+	</div>
+</body>
+
+</html>
