@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>页面布局方法</title>
+</head>
+
+<body>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		body {
+			background: #ccc;
+		}
+
+		body>header {
+			padding: 20px;
+		}
+
+		h1,
+		h2 {
+			text-align: center;
+		}
+
+		h2 {
+			padding-top: 20px;
+		}
+
+		section {
+			border: 1px solid #eee;
+		}
+
+		.exercise1 {
+			max-width: 1200px;
+			margin: 10px auto;
+		}
+
+		.exercise1 .items-wrapper {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-start;
+			margin-left: -8px;
+			margin-right: -8px;
+		}
+
+		.exercise1 .item {
+			margin: 8px;
+			width: 288px;
+			height: 187px;
+			border: 10px solid tan;
+			text-align: center;
+			padding: 74px;
+		}
+
+		.exercise2 {
+			max-width: 1200px;
+			margin: 10px auto;
+		}
+
+		.exercise2 .items-wrapper {
+			margin-left: -8px;
+			margin-right: -8px;
+		}
+
+		.clearfix::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		.exercise2 .item {
+			float: left;
+			margin: 8px;
+			width: 288px;
+			height: 187px;
+			border: 10px solid tan;
+			text-align: center;
+			padding: 74px;
+		}
+
+		.exercise3 {
+			border: 10px solid red;
+			margin: 20px auto;
+		}
+
+		.exercise3>header {
+			border: 10px solid green;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.exercise3 .content-wrapper {
+			display: flex;
+			min-height: 250px;
+		}
+
+		.exercise3 .content-wrapper>aside {
+			border: 10px solid blue;
+			width: 220px;
+			height: 55vh;
+			text-align: center;
+			padding-top: 50px;
+		}
+
+		.exercise3 .content-wrapper>main {
+			flex-grow: 1;
+			padding-top: 50px;
+			text-align: center;
+			border: 10px solid orange;
+		}
+
+		.exercise3 footer {
+			border: 10px solid green;
+			padding: 20px;
+			text-align: center;
+		}
+	</style>
+	</head>
+
+
+	<body>
+		<header>
+			<h1>页面布局技巧</h1>
+		</header>
+		<main>
+			<section>
+				<h2>1. 列表展示 —— Flex 方法</h2>
+				<div class='exercise1'>
+					<ul class="items-wrapper">
+						<li class="item">项目1</li>
+						<li class="item">项目2</li>
+						<li class="item">项目3</li>
+						<li class="item">项目4</li>
+						<li class="item">项目5</li>
+						<li class="item">项目6</li>
+						<li class="item">项目7</li>
+				</div>
+			</section>
+			<section>
+				<h2>2. 列表展示 —— Float 方法</h2>
+				<div class='exercise2'>
+					<ul class="items-wrapper clearfix">
+						<li class="item">项目1</li>
+						<li class="item">项目2</li>
+						<li class="item">项目3</li>
+						<li class="item">项目4</li>
+						<li class="item">项目5</li>
+						<li class="item">项目6</li>
+						<li class="item">项目7</li>
+				</div>
+			</section>
+			<section>
+				<h2>3. PC端 页面布局 —— Flex 方法</h2>
+				<div class='exercise3'>
+					<header>Header 标签<br>宽度自适应，高度固定</header>
+					<div class='content-wrapper'>
+						<aside>Aside 标签<br>宽度固定，高度适应窗口</aside>
+						<main>Main 标签<br>宽度尽可能大，高度自适应</main>
+					</div>
+					<footer>Footer 标签<br>宽度自适应，高度固定</footer>
+			</section>
+		</main>
+	</body>
+
+</body>
+
+</html>
